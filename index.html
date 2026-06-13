@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respeito e Calma - Exercício de Respiração</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #eef2f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* O círculo de respiração */
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 220px;
+            margin-bottom: 30px;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+            /* Ciclo total de 12 segundos (4s inspira + 2s segura + 6s expira) */
+            animation: breatheAnimation 12s infinite ease-in-out;
+        }
+
+        /* Texto dinâmico usando CSS content */
+        .circle::after {
+            content: '';
+            animation: textAnimation 12s infinite linear;
+        }
+
+        /* Animação do tamanho do círculo */
+        @keyframes breatheAnimation {
+            0% { transform: scale(1); background-color: #3498db; }       /* Início */
+            33.33% { transform: scale(2); background-color: #2ecc71; }   /* 4s - Expandido (Inspira) */
+            50% { transform: scale(2); background-color: #f1c40f; }      /* 6s - Mantém (Segura) */
+            100% { transform: scale(1); background-color: #3498db; }     /* 12s - Encolhe (Solta) */
+        }
+
+        /* Animação do texto interno */
+        @keyframes textAnimation {
+            0%, 33.32% { content: 'Inspire'; }
+            33.33%, 49.99% { content: 'Segure'; }
+            50%, 100% { content: 'Solte'; }
+        }
+
+        .instrucoes {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .instrucoes li {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Respire e Acalme</h1>
+        <p>Acompanhe o movimento do círculo para acalmar a mente e relaxar o seu intestino.</p>
+        
+        <div class="circle-container">
+            <div class="circle"></div>
+        </div>
+
+        <div class="instrucoes">
+            <strong>Como fazer:</strong>
+            <ul>
+                <li>Coloque a mão na barriga.</li>
+                <li>Puxe o ar pelo nariz quando o círculo crescer.</li>
+                <li>Segure o ar quando ele mudar de cor e parar.</li>
+                <li>Solte o ar lentamente pela boca quando ele encolher.</li>
+            </ul>
+        </div>
+    </div>
+
+
+  
+</body>
+</html>
